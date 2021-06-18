@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="heco.com.heco.mapper.TableFieldSearchMapper">
+
+    <select id="selectTableFielByTableName" resultType="heco.com.heco.entity.TableField">
+        SELECT
+            COLUMN_NAME columnName,
+            COLUMN_TYPE columnType,
+            DATA_TYPE dataType,
+            CHARACTER_MAXIMUM_LENGTH characterMaximumLength,
+            IS_NULLABLE isNullable,
+            COLUMN_DEFAULT columnDefault,
+            COLUMN_COMMENT columnComment
+        FROM
+            INFORMATION_SCHEMA.COLUMNS
+        WHERE
+            TABLE_SCHEMA = 'macrowing_erms_db_v2'
+        AND
+            TABLE_NAME = #{tableName}
+    </select>
+    <select id="selectAllTableName" resultType="java.lang.String">
+        SELECT
+            TABLE_NAME
+        FROM
+            information_schema.TABLES
+        WHERE
+            TABLE_SCHEMA = 'macrowing_erms_db_v2'
+    </select>
+</mapper>
