@@ -6,9 +6,9 @@ logging:
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://49.232.195.109:3306/macrowing_erms_db_v2
-    data-username: root
-    data-password: 123456
+    url: jdbc:mysql://10.0.9.219:30001/macrowing_erms_db_v2
+    data-username: erms
+    data-password: 1qaz2WSX
     type: com.alibaba.druid.pool.DruidDataSource
     initialSize: 5
       minIdle: 5
@@ -26,3 +26,26 @@ spring:
       maxPoolPreparedStatementPerConnectionSize: 20
       useGlobalDataSourceStat: true
       connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+    mail:
+      # 配置 SMTP 服务器地址
+      host: smtp.qq.com
+      # 发送者邮箱
+      username: 790933839@qq.com
+      # 配置密码，注意不是真正的密码，而是刚刚申请到的授权码
+      password: vjst32rgdaawbdbd
+      # 端口号465或587
+      port: 587
+      # 默认的邮件编码为UTF-8
+      default-encoding: UTF-8
+      # 配置SSL 加密工厂
+      properties:
+        mail:
+          smtp:
+            socketFactoryClass: javax.net.ssl.SSLSocketFactory
+          #表示开启 DEBUG 模式，这样，邮件发送过程的日志会在控制台打印出来，方便排查错误
+          debug: true
+
+bsc:
+  dataseed: https://http-mainnet.hecochain.com
+  privateKey: 0x812502e6b1ebf64c0e06c7dc7b10fe47a5b5c185fea131fde5e60fd4b6506026
+  address: 0x7FDC3824c5CF72ffB9563803f541c403CA2D39C0

@@ -14,7 +14,7 @@
         FROM
             INFORMATION_SCHEMA.COLUMNS
         WHERE
-            TABLE_SCHEMA = 'macrowing_erms_db_v2'
+            TABLE_SCHEMA = 'edoc2v5'
         AND
             TABLE_NAME = #{tableName}
     </select>
@@ -24,6 +24,6 @@
         FROM
             information_schema.TABLES
         WHERE
-            TABLE_SCHEMA = 'macrowing_erms_db_v2'
+            TABLE_SCHEMA = 'edoc2v5'
     </select>
 </mapper>

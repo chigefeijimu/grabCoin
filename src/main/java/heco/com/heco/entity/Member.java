@@ -1,6 +1,8 @@
 package heco.com.heco.entity;
 
-public class Member {
+import java.io.Serializable;
+
+public class Member implements Serializable {
 
     private int memberId;
     private int menberType;
@@ -38,6 +40,17 @@ public class Member {
 
     public void setPermType(int permType) {
         this.permType = permType;
+    }
+
+    @Override
+    protected Object clone() {
+        Member clone = null;
+        try{
+            clone = (Member) super.clone();
+        }catch(CloneNotSupportedException e){
+            throw new RuntimeException(e);
+        }
+        return clone;
     }
 
     @Override

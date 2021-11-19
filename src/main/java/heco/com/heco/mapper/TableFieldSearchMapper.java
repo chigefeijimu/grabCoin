@@ -1,12 +1,14 @@
 package heco.com.heco.mapper;
 
 import heco.com.heco.entity.TableField;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
 /**
  * @author junqiao.li
  */
+@Mapper
 public interface TableFieldSearchMapper {
 
     /**
